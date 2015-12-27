@@ -529,10 +529,12 @@ void processLoopback(void) {
 #endif
 
 int main(void) {
+    // 这是不带操作系统的软件，所以说代码是很明了的
     init();
-
+    // 初始化完毕之后就是一个死循环
     while (1) {
         loop();
+        // 这个函数不太好理解，是指每一次循环都需要进行一次写得操作么？
         processLoopback();
     }
 }
