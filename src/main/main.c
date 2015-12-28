@@ -539,9 +539,11 @@ int main(void) {
     }
 }
 
+// 故障处理
 void HardFault_Handler(void)
 {
     // fall out of the sky
+    // 从天上掉下来
     uint8_t requiredState = SYSTEM_STATE_CONFIG_LOADED | SYSTEM_STATE_MOTORS_READY;
     if ((systemState & requiredState) == requiredState) {
         stopMotors();
